@@ -323,7 +323,7 @@ IEnumerator<bool> GetSafetyHarnessExtendIterator()
         yield return false;
     }
 
-    //while (safetyConnectors.Any(x => x.Status != MyShipConnectorStatus.Connected))
+    while (!safetyConnectors.Any(x => x.Status == MyShipConnectorStatus.Connected))
     {
         foreach (var c in safetyConnectors)
             c.Connect();
